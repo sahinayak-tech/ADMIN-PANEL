@@ -278,8 +278,13 @@ $( "a" ).click(function( event ) {
 });
 </script>
 
-  
- 
+<--fxinterval-->
+<script>
+jQuery.fx.interval = 100;
+$( "input" ).click(function() {
+  $( "div" ).toggle( 3000 );
+});
+</script> 
   
   
 
