@@ -399,7 +399,22 @@ $( "button" ).click(function() {
 });
 </script>
   
-<---->
+<--slide up1-2-->
+<script>
+$( document.body ).click(function() {
+  if ( $( "div" ).first().is( ":hidden" ) ) {
+    $( "div" ).show( "slow" );
+  } else {
+    $( "div" ).slideUp();
+  }
+});
+</script>
+$( "button" ).click(function() {
+  $( this ).parent().slideUp( "slow", function() {
+    $( "#msg" ).text( $( "button", this ).text() + " has completed." );
+  });
+});
+</script>
 
    
  
