@@ -93,7 +93,134 @@ $( "form" ).submit(function( event ) {
   showValues();
 </script>
       
-      
+<--Jquery Effects-->
+  
+  
+<--animate-->
+  
+<script>
+// Using multiple unit types within one animation.
+ 
+$( "#go" ).click(function() {
+  $( "#block" ).animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+  }, 1500 );
+});
+</script>
+ 
+  
+<--clear queue-->
+<script>
+$( "#start" ).click(function() {
+  var myDiv = $( "div" );
+  myDiv.show( "slow" );
+  myDiv.animate({
+    left:"+=200"
+  }, 5000 );
+ 
+  myDiv.queue(function() {
+    var that = $( this );
+    that.addClass( "newcolor" );
+    that.dequeue();
+  });
+ 
+  myDiv.animate({
+    left:"-=200"
+  }, 1500 );
+  myDiv.queue(function() {
+    var that = $( this );
+    that.removeClass( "newcolor" );
+    that.dequeue();
+  });
+  myDiv.slideUp();
+});
+ 
+$( "#stop" ).click(function() {
+  var myDiv = $( "div" );
+  myDiv.clearQueue();
+  myDiv.stop();
+});
+</script>
+  
+<--Delay -->
+<script>
+$( "button" ).click(function() {
+  $( "div.first" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+  $( "div.second" ).slideUp( 300 ).fadeIn( 400 );
+});
+</script>
+  
+<--dequeue -->
+<script>
+$( "button" ).click(function() {
+  $( "div" )
+    .animate({ left:"+=200px" }, 2000 )
+    .animate({ top:"0px" }, 600 )
+    .queue(function() {
+      $( this ).toggleClass( "red" ).dequeue();
+    })
+    .animate({ left:"10px", top:"30px" }, 700 );
+});
+</script>
+  
+<--Fade in-->
+<script>
+$( document.body ).click(function() {
+  $( "div:hidden" ).first().fadeIn( "slow" );
+});
+</script>
+  
+<--Fade Out-->
+<script>
+$( "p" ).click(function() {
+  $( "p" ).fadeOut( "slow" );
+});
+</script>
+  
+  
+<--fade to-->
+<script>
+var getPos = function( n ) {
+  return (Math.floor( n ) * 90) + "px";
+};
+$( "p" ).each(function( n ) {
+  var r = Math.floor( Math.random() * 3 );
+  var tmp = $( this ).text();
+  $( this ).text( $( "p" ).eq( r ).text() );
+  $( "p" ).eq( r ).text( tmp );
+  $( this ).css( "left", getPos( n ) );
+});
+$( "div" )
+  .each(function( n ) {
+    $( this ).css( "left", getPos( n ) );
+  })
+  .css( "cursor", "pointer" )
+  .click( function() {
+    $( this ).fadeTo( 250, 0.25, function() {
+      $( this )
+        .css( "cursor", "" )
+        .prev()
+          .css({
+            "font-weight": "bolder",
+            "font-style": "italic"
+          });
+    });
+  });
+</script>
+
+
+  
+ 
+  
+  
+
+  
+  
+
       
       
       
