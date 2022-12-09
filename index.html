@@ -324,7 +324,13 @@ runIt();
 showIt();
 </script>
   
-<--show-->
+<--show type1,2,3-->
+<script>
+$( "button" ).click(function() {
+  $( "p" ).show( "slow" );
+});
+</script>
+ 
 <script>
 $( "#showr" ).click(function() {
   $( "div" ).first().show( "fast", function showNext() {
@@ -336,6 +342,29 @@ $( "#hidr" ).click(function() {
   $( "div" ).hide( 1000 );
 });
 </script>
+  
+  
+<script>
+function doIt() {
+  $( "span,div" ).show( "slow" );
+}
+// Can pass in function name
+$( "button" ).click( doIt );
+ 
+$( "form" ).submit(function( event ) {
+  if ( $( "input" ).val() === "yes" ) {
+    $( "p" ).show( 4000, function() {
+      $( this ).text( "Ok, DONE! (now showing)" );
+    });
+  }
+  $( "span,div" ).hide( "fast" );
+ 
+  // Prevent form submission
+  event.preventDefault();
+});
+</script>
+ 
+
    
  
 
