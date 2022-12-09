@@ -269,6 +269,14 @@ $( "#go" ).on( "click", function() {
 });
 </script>  
   
+<--hide-->
+<script>
+$( "p" ).hide();
+$( "a" ).click(function( event ) {
+  event.preventDefault();
+  $( this ).hide();
+});
+</script>
 
   
  
