@@ -322,7 +322,20 @@ function showIt() {
  
 runIt();
 showIt();
-</script
+</script>
+  
+<--show-->
+<script>
+$( "#showr" ).click(function() {
+  $( "div" ).first().show( "fast", function showNext() {
+    $( this ).next( "div" ).show( "fast", showNext );
+  });
+});
+ 
+$( "#hidr" ).click(function() {
+  $( "div" ).hide( 1000 );
+});
+</script>
    
  
 
