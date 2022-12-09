@@ -24,7 +24,7 @@
   
   
 
-  <-- submit -->
+  <--Jquery submit -->
   <script>
 $( "form" ).submit(function( event ) {
   if ( $( "input" ).first().val() === "correct" ) {
@@ -36,7 +36,7 @@ $( "form" ).submit(function( event ) {
   event.preventDefault();
 });
 </script>
-  <--button-->
+  <--Jquery button-->
   <script>
 var input = $( ":button" ).addClass( "marked" );
 $( "div" ).text( "For this type jQuery found " + input.length + "." );
