@@ -36,7 +36,9 @@ $( "form" ).submit(function( event ) {
   event.preventDefault();
 });
 </script>
-  <--Jquery button-->
+  
+    
+    <--Jquery button-->
   <script>
 var input = $( ":button" ).addClass( "marked" );
 $( "div" ).text( "For this type jQuery found " + input.length + "." );
@@ -45,5 +47,35 @@ $( "form" ).submit(function( event ) {
   event.preventDefault();
 });
 </script>
+
+
+<--Jquery handler-->
+<script>
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( "div" ).text( str );
+  })
+  .change();
+</script>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 </body>
 </html>
