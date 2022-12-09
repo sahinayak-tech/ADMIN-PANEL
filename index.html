@@ -62,7 +62,20 @@ $( "select" )
   .change();
 </script>
       
-      
+<--Jquery File Uploader-->
+  
+<script>
+var input = $( "input:file" ).css({
+  background: "yellow",
+  border: "3px red solid"
+});
+$( "div" )
+  .text( "For this type jQuery found " + input.length + "." )
+  .css( "color", "red" );
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
+});
+</script>
       
       
       
