@@ -363,6 +363,34 @@ $( "form" ).submit(function( event ) {
   event.preventDefault();
 });
 </script>
+  
+<--slidedown1-2-->
+<script>
+$( document.body ).click(function () {
+  if ( $( "div" ).first().is( ":hidden" ) ) {
+    $( "div" ).slideDown( "slow" );
+  } else {
+    $( "div" ).hide();
+  }
+});
+</script>
+ <script>
+$( "div" ).click(function() {
+  $( this ).css({
+    borderStyle: "inset",
+    cursor: "wait"
+  });
+  $( "input" ).slideDown( 1000, function() {
+    $( this )
+      .css( "border", "2px red inset" )
+      .filter( ".middle" )
+        .css( "background", "yellow" )
+        .focus();
+    $( "div" ).css( "visibility", "hidden" );
+  });
+});
+ 
+</script>
  
 
    
